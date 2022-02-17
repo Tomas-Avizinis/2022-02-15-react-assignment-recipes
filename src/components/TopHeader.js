@@ -12,7 +12,7 @@ const TopHeader = () => {
             <div className={'flex gap'}>
                 <button onClick={()=>{nav('/')}}>Visi</button>
                 <button onClick={()=>{nav('/favourites')}}>Megiamiausi</button>
-                <button onClick={()=>{nav('/createrecipe')}}>Sukurti nauja</button>
+                <button onClick={()=>{nav('/create')}}>Sukurti nauja</button>
             </div>
 
         </div>

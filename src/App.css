@@ -196,6 +196,14 @@ fieldset {
 .left {left: 0;}
 .right {right:0;}
 
+.favourite {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.favourite:hover {
+  transform: scale(1.5);
+}
+
 
 
 

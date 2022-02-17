@@ -15,16 +15,24 @@ function App() {
     const [currentRecipe, setCurrentRecipe]=useState();
     const [favourites, setFavourites]=useState([]);
 
+    const favouriteOnOff=(id)=>{
+        if (favourites.includes(id)) {
+            const newFavs=favourites.splice(favourites.indexOf(id),1);
+            setFavourites([...favourites.splice(favourites.indexOf(id),1)]);
+        } else setFavourites([...favourites, id]);
+    }
+
+
   return (
 
-      <MainContext.Provider value={{currentRecipe, setCurrentRecipe, favourites, setFavourites}}>
+      <MainContext.Provider value={{currentRecipe, setCurrentRecipe, favourites, setFavourites, favouriteOnOff}}>
           <div className="App">
               <TopHeader />
               <Routes>
                   <Route path='/' element={<Main />} />
-                  <Route path='/createrecipe' element={<CreateRecipe />} />
+                  <Route path='/create' element={<CreateRecipe />} />
                   <Route path='/favourites' element={<Favourites />} />
-                  <Route path='/singlerecipe/:recipe' element={<SingleRecipe />} />
+                  <Route path='/recipe/:recipe' element={<SingleRecipe />} />
               </Routes>
               <Footer />
           </div>

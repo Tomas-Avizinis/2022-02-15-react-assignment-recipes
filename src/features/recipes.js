@@ -7,7 +7,6 @@ export const recipesSlice=createSlice( {
             {
                 "title": 'Pica',
                 "id":1,
-                "favourite": true,
                 "pictures": [
                     'https://c4.wallpaperflare.com/wallpaper/234/543/684/food-pizza-wallpaper-preview.jpg',
                     'https://c4.wallpaperflare.com/wallpaper/776/107/693/food-cheese-milk-tomatoes-wallpaper-preview.jpg',
@@ -22,7 +21,6 @@ export const recipesSlice=createSlice( {
             {
                 "title": 'Mesainis',
                 "id":2,
-                "favourite": true,
                 "pictures": [
                     'https://c4.wallpaperflare.com/wallpaper/374/404/846/brown-bird-perching-during-daytime-wren-wren-wallpaper-preview.jpg',
                     'https://c4.wallpaperflare.com/wallpaper/798/46/343/cheese-mold-olives-food-wallpaper-thumb.jpg',
@@ -35,7 +33,6 @@ export const recipesSlice=createSlice( {
             {
                 "title": "Salotos",
                 "id":3,
-                "favourite": false,
                 "pictures": ["https://c4.wallpaperflare.com/wallpaper/388/340/982/food-salad-vegetable-pepper-wallpaper-preview.jpg"],
                 "ingredients": ["net nezinau", "nuo ko pradeti"],
                 "prepTime": "1-10 min",
@@ -44,7 +41,6 @@ export const recipesSlice=createSlice( {
             {
                 "title": "ledai",
                 "id":4,
-                "favourite": true,
                 "pictures": ["https://c4.wallpaperflare.com/wallpaper/946/557/290/ice-cream-food-colorful-wallpaper-preview.jpg"],
                 "ingredients": ["vaflis", "saldytas vanduo", "grietinele"],
                 "prepTime": "15 sek",
@@ -53,7 +49,6 @@ export const recipesSlice=createSlice( {
             {
                 "title": "Vaisiai, uogos",
                 "id":5,
-                "favourite": false,
                 "pictures": ["https://c4.wallpaperflare.com/wallpaper/437/455/804/food-fruit-strawberries-blood-orange-wallpaper-preview.jpg"],
                 "ingredients": ["Vaisiai", "uogos"],
                 "prepTime": "30 min",
@@ -62,7 +57,6 @@ export const recipesSlice=createSlice( {
             {
                 "title": "Darzoves",
                 "id":6,
-                "favourite": true,
                 "pictures": ["https://c4.wallpaperflare.com/wallpaper/770/26/351/food-fruits-and-vegetables-wallpaper-preview.jpg"],
                 "ingredients": ["vaisiai", "darzoves", "sodo gerybes"],
                 "prepTime": "45 min",
@@ -74,18 +68,8 @@ export const recipesSlice=createSlice( {
         addRecipe: (state, action)=> {
             state.value=[...state.value, action.payload];
         },
-
-        favouriteOnOff: (state, {payload: id})=>{
-            console.log('noriu favorito', id);
-            // console.log(current(state));
-            // const produktai=current(state);
-            // console.log(produktai.value);
-            const produktas=current(state).value.find(item => item.id===id );
-            console.log(produktas);
-            // state.value=[...current(state).value.map(item=> item.id===id? !item.favourite: item.favourite )];
-        }
     }
 });
 
-export const {addRecipe, favouriteOnOff}= recipesSlice.actions;
+export const {addRecipe}= recipesSlice.actions;
 export default recipesSlice.reducer;

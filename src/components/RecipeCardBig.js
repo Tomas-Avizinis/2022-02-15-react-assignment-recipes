@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Carousell from "./Carousell";
-import {favouriteOnOff} from "../features/recipes";
-import {useDispatch} from "react-redux";
+import MainContext from "../context/MainContext";
+
 
 const RecipeCardBig = ({recipe}) => {
 
-    const dispatch=useDispatch();
+    const {favourites, favouriteOnOff}=useContext(MainContext);
+
 
     return (
         <div className={'recipe-card-big'}>
@@ -16,10 +17,11 @@ const RecipeCardBig = ({recipe}) => {
             <div className={'recipe-info-big'}>
                 <div className={'flex gap space-btw'}>
                     <h3>{recipe.title}</h3>
-                    <p className={'favourite'}
-                       style={{color: recipe.favourite? 'red': 'lightgray'}}
-                       onClick={()=>dispatch(favouriteOnOff(recipe.id))}
-                    >❤</p>
+                    <span className={'favourite'}
+                        style={{color: favourites.includes(recipe.id)? 'red': 'lightgray'}}
+                        onClick={()=>favouriteOnOff(recipe.id)}
+                        title='Add to favourites'
+                    >❤</span>
                     <p>Time: <b>{recipe.prepTime}</b></p>
                 </div>
                 {recipe.ingredients.map((ingred, i)=><p key={i}>{ingred}</p>)}
