@@ -27,9 +27,7 @@ const RecipeCard = ({recipe}) => {
                         >❤</span>
                     <p>Time: <b>{recipe.prepTime}</b></p>
                 </div>
-                {/*{recipe.ingredients.map((ingred, i)=><p key={i}>{ingred}</p>)}*/}
-                {/*<p><b>Preparation:</b></p>*/}
-                {/*{recipe.steps.map((step, i)=><p key={i}>{i+1}. {step}</p>)}*/}
+
             </div>
         </div>
     );

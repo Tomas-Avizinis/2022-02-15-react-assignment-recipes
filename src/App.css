@@ -203,6 +203,10 @@ fieldset {
 .favourite:hover {
   transform: scale(1.5);
 }
+p {
+  margin: 0;
+  padding: 0;
+}
 
 
 

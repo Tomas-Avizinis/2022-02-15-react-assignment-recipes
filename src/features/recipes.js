@@ -17,6 +17,16 @@ export const recipesSlice=createSlice( {
                 "ingredients": ['padas', 'desra', 'suris'],
                 "prepTime": '12-15 min',
                 "steps": ['ikaitinti orkaite', 'ir kepti nurodyta laika'],
+                "reviews":[
+                    {
+                        'rating':5,
+                        'text': 'labai skanu'
+                    },
+                    {
+                        'rating':4,
+                        'text': 'sssss'
+                    },
+                ]
             },
             {
                 "title": 'Mesainis',
@@ -28,7 +38,17 @@ export const recipesSlice=createSlice( {
                 ],
                 "ingredients": ['bandele', 'kotletas', 'suris', 'salota'],
                 "prepTime": '2-5 min',
-                "steps": ['atvozti bandele', 'sudeti kotleta', 'suri', 'ant virsaus…salota', 'ir nepamirsti persmeigti dantu krapstuku.']
+                "steps": ['atvozti bandele', 'sudeti kotleta', 'suri', 'ant virsaus…salota', 'ir nepamirsti persmeigti dantu krapstuku.'],
+                "reviews":[
+                    {
+                        'rating':5,
+                        'text': 'labai skanu'
+                    },
+                    {
+                        'rating':4,
+                        'text': 'sssss'
+                    },
+                ]
             },
             {
                 "title": "Salotos",
@@ -36,7 +56,17 @@ export const recipesSlice=createSlice( {
                 "pictures": ["https://c4.wallpaperflare.com/wallpaper/388/340/982/food-salad-vegetable-pepper-wallpaper-preview.jpg"],
                 "ingredients": ["net nezinau", "nuo ko pradeti"],
                 "prepTime": "1-10 min",
-                "steps": ["geriausia butu nusipirkti."]
+                "steps": ["geriausia butu nusipirkti."],
+                "reviews":[
+                    {
+                        'rating':5,
+                        'text': 'labai skanu'
+                    },
+                    {
+                        'rating':4,
+                        'text': 'sssss'
+                    },
+                ]
             },
             {
                 "title": "ledai",
@@ -44,7 +74,17 @@ export const recipesSlice=createSlice( {
                 "pictures": ["https://c4.wallpaperflare.com/wallpaper/946/557/290/ice-cream-food-colorful-wallpaper-preview.jpg"],
                 "ingredients": ["vaflis", "saldytas vanduo", "grietinele"],
                 "prepTime": "15 sek",
-                "steps": ["sumoketi pingus"]
+                "steps": ["sumoketi pingus"],
+                "reviews":[
+                    {
+                        'rating':5,
+                        'text': 'labai skanu'
+                    },
+                    {
+                        'rating':4,
+                        'text': 'sssss'
+                    },
+                ]
             },
             {
                 "title": "Vaisiai, uogos",
@@ -52,7 +92,17 @@ export const recipesSlice=createSlice( {
                 "pictures": ["https://c4.wallpaperflare.com/wallpaper/437/455/804/food-fruit-strawberries-blood-orange-wallpaper-preview.jpg"],
                 "ingredients": ["Vaisiai", "uogos"],
                 "prepTime": "30 min",
-                "steps": ['nuskinti', 'nuplauti', 'valgyti', 'spjaudyti kauliuks']
+                "steps": ['nuskinti', 'nuplauti', 'valgyti', 'spjaudyti kauliuks'],
+                "reviews":[
+                    {
+                        'rating':5,
+                        'text': 'labai skanu'
+                    },
+                    {
+                        'rating':4,
+                        'text': 'sssss'
+                    },
+                ]
             },
             {
                 "title": "Darzoves",
@@ -60,7 +110,17 @@ export const recipesSlice=createSlice( {
                 "pictures": ["https://c4.wallpaperflare.com/wallpaper/770/26/351/food-fruits-and-vegetables-wallpaper-preview.jpg"],
                 "ingredients": ["vaisiai", "darzoves", "sodo gerybes"],
                 "prepTime": "45 min",
-                "steps": ["skinti", "nuplauti", "palaukti kol nudzius", "valgyti"]
+                "steps": ["skinti", "nuplauti", "palaukti kol nudzius", "valgyti"],
+                "reviews":[
+                    {
+                        'rating':2,
+                        'text': 'labai skanu'
+                    },
+                    {
+                        'rating':4,
+                        'text': 'sssss'
+                    },
+                ]
             }
         ],
     },

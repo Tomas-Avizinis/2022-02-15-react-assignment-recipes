@@ -30,6 +30,7 @@ const CreateRecipe = () => {
             ingredients: ingredArray,
             prepTime:prepTimeRef.current.value,
             steps: stepsArray,
+            reviews:[]
         }));
         nav('/');
     }
