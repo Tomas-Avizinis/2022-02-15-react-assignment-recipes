@@ -13,19 +13,19 @@ import MainContext from "./context/MainContext";
 function App() {
 
     const [currentRecipe, setCurrentRecipe]=useState();
+    const [currentId, setCurrentId]=useState();
     const [favourites, setFavourites]=useState([]);
 
     const favouriteOnOff=(id)=>{
         if (favourites.includes(id)) {
-            const newFavs=favourites.splice(favourites.indexOf(id),1);
-            setFavourites([...favourites.splice(favourites.indexOf(id),1)]);
+            setFavourites([...favourites.filter(item=>item!==id)]);
         } else setFavourites([...favourites, id]);
     }
 
 
   return (
 
-      <MainContext.Provider value={{currentRecipe, setCurrentRecipe, favourites, setFavourites, favouriteOnOff}}>
+      <MainContext.Provider value={{currentRecipe, setCurrentRecipe, favourites, setFavourites, currentId, setCurrentId, favouriteOnOff}}>
           <div className="App">
               <TopHeader />
               <Routes>

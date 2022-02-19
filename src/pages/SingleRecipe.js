@@ -6,11 +6,11 @@ import MainContext from "../context/MainContext";
 const SingleRecipe = () => {
 
 
-    const {currentRecipe}=useContext(MainContext);
+    const {currentId}=useContext(MainContext);
 
     return (
-        <div className={'flex'}>
-            <RecipeCardBig recipe={currentRecipe}/>
+        <div className={'single'}>
+            <RecipeCardBig recipeId={currentId}/>
         </div>
     );
 };

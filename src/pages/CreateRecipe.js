@@ -18,7 +18,6 @@ const CreateRecipe = () => {
     const [stepsArray, setStepsArray]=useState(['']);
 
     const currentId= recipes[recipes.length-1].id+1;
-    console.log('naujo recepto id', currentId);
 
     const submitRecipe=()=>{
 
@@ -30,7 +29,9 @@ const CreateRecipe = () => {
             ingredients: ingredArray,
             prepTime:prepTimeRef.current.value,
             steps: stepsArray,
-            reviews:[]
+            reviews:[
+
+            ]
         }));
         nav('/');
     }
@@ -81,7 +82,8 @@ const CreateRecipe = () => {
 
 
     return (
-        <div className={'flex-col gap overflow'}>
+        <div className={'create flex-col gap'}>
+
             <h1>Sukurti recepta</h1>
 
             <div className={'flex-col gap left'}>

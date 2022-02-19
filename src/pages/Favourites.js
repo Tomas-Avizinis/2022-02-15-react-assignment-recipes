@@ -11,11 +11,9 @@ const Favourites = () => {
 
 
     return (
-        <div>
-            <h1> Megiami receptaia</h1>
-            <div className={'flex wrap overflow'}>
-                {favRecipes.map((r,i)=><RecipeCard recipe={r} key={i}/>)}
-            </div>
+        <div className={'favourites flex wrap'}>
+            {favRecipes.map((r,i)=><RecipeCard recipeId={r.id} key={i}/>)}
+
         </div>
     );
 };

@@ -1,14 +1,13 @@
 import React from 'react';
 
 const Rating = ({rating}) => {
+
+    const stars=['★','★','★','★','★'];
+
     return (
 
         <div className={'flex'}>
-            <p style={{color: rating>=1? 'green': 'gray'}}>★</p>
-            <p style={{color: rating>=2? 'green': 'gray'}}>★</p>
-            <p style={{color: rating>=3? 'green': 'gray'}}>★</p>
-            <p style={{color: rating>=4? 'green': 'gray'}}>★</p>
-            <p style={{color: rating===5? 'green': 'gray'}}>★</p>
+            {stars.map((star, i) => <div className={'rating-stars-lg'} key={i} style={{color: rating >= i + 1 && 'green'}}>{star}</div>)}
         </div>
     );
 };
