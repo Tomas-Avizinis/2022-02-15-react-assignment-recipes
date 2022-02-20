@@ -16,7 +16,7 @@ export const recipesSlice=createSlice( {
                     'https://c4.wallpaperflare.com/wallpaper/741/599/723/pizza-food-vegetables-fruit-wallpaper-preview.jpg',
 
                 ],
-                "ingredients": ['Padas', 'dešra', 'sūris', 'alyvuogės'],
+                "ingredients": ['padas', 'desra', 'suris', 'alyvuoges'],
                 "prepTime": 15,
                 "steps": ['Įkaitinti orkaitę', 'ir kepti nurodytą laiką'],
                 "reviews":[
@@ -69,9 +69,9 @@ export const recipesSlice=createSlice( {
                     "https://c1.wallpaperflare.com/preview/944/141/271/bake-baking-bread-cook.jpg"
                 ],
                 "ingredients": [
-                    "Miltai",
-                    "Vanduo",
-                    "Prieskoniai"
+                    "miltai",
+                    "vanduo",
+                    "prieskoniai"
                 ],
                 "prepTime": "60",
                 "steps": [
@@ -94,9 +94,9 @@ export const recipesSlice=createSlice( {
                     "https://c4.wallpaperflare.com/wallpaper/187/997/205/lasagne-wallpaper-preview.jpg"
                 ],
                 "ingredients": [
-                    "Makaronų lakštai",
-                    "Mėsos faršas",
-                    "Prieskoniai"
+                    "makaronų lakstai",
+                    "mesa",
+                    "prieskoniai"
                 ],
                 "prepTime": "25",
                 "steps": [
@@ -105,6 +105,38 @@ export const recipesSlice=createSlice( {
                     "kepti orkaitėje 20-25 min"
                 ],
                 "reviews": []
+            },
+            {
+                "title": "Mesa ant groteliu",
+                "id": 5,
+                "favourite": false,
+                "pictures": [
+                    "https://c4.wallpaperflare.com/wallpaper/358/377/179/meat-food-steak-wood-wallpaper-preview.jpg",
+                    "https://c4.wallpaperflare.com/wallpaper/417/148/13/steak-meat-food-rib-eye-steak-wallpaper-preview.jpg",
+                    "https://c4.wallpaperflare.com/wallpaper/419/342/435/fire-meat-vegetables-steak-grill-hd-wallpaper-preview.jpg",
+                    "https://c4.wallpaperflare.com/wallpaper/663/296/974/meat-food-meal-dinner-wallpaper-preview.jpg"
+                ],
+                "ingredients": [
+                    "mesa",
+                    "groteles"
+                ],
+                "prepTime": "30",
+                "steps": [
+                    "Nusipirkti smota mesos",
+                    "Pasiskolinti groteles",
+                    "Sulaukti gero oro",
+                    "Neskubant kepti gurksnojant alu"
+                ],
+                "reviews": [
+                    {
+                        "rating": 5,
+                        "text": "sultinga mesyte"
+                    },
+                    {
+                        "rating": 3,
+                        "text": "Kam man mesa jei as vegetaras, bet is pagarbos mesedziams duosiu bent 3"
+                    }
+                ]
             }
         ],
     },

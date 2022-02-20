@@ -7,6 +7,7 @@ const Filters = ({filterRecipes, noFilter}) => {
     const ingredNumRef=useRef();
     const timeRef=useRef();
     const reviewNumRef=useRef();
+    const checkRef=useRef();
     const ratingRef=useRef();
 
 
@@ -27,6 +28,7 @@ const Filters = ({filterRecipes, noFilter}) => {
         ingredNumRef.current.value='';
         timeRef.current.value='';
         reviewNumRef.current.value='';
+        checkRef.current.checked=false;
         ratingRef.current.value='';
         noFilter();
         setRange(2);
@@ -37,7 +39,9 @@ const Filters = ({filterRecipes, noFilter}) => {
     const [range, setRange]=useState(2);
 
 
-    useEffect(()=>clearInputs(),[]);
+    useEffect(()=> {
+        clearInputs();
+    },[]);
 
     return (
         <div className={'side-bar'} >
@@ -52,7 +56,7 @@ const Filters = ({filterRecipes, noFilter}) => {
 
                 <div className={'flex gap'}>
 
-                    <input type="checkbox" onChange={()=>setRatingOn(!ratingOn)}/>
+                    <input type="checkbox" ref={checkRef} onChange={()=> setRatingOn(!ratingOn)} />
 
                     <input style={{opacity: ratingOn? '1':'.1'}} className={'range'} type="range" ref={ratingRef} min='0' max='4' step='.1' onChange={e=>setRange(e.target.value)} id='rating' />
                 </div>
