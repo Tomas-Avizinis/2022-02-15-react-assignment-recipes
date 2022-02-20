@@ -34,10 +34,7 @@ const ReviewModal = ({recipe, setShowReview}) => {
 
     return (
         <div className={'review-modal'}>
-            {/*<div className={'flex space-btw'} style={{width:'100%'}}>*/}
 
-
-            {/*</div>*/}
 
             <div className={'flex left gap '} >
                 <input type="text" placeholder={'Write review and give stars'} ref={reviewRef} style={{width: '220px'}}/>
@@ -54,11 +51,6 @@ const ReviewModal = ({recipe, setShowReview}) => {
                     <p><b>Reviews:</b></p>
                     {/*<button onClick={()=>{setSort(!sort)}}>{sort? 'new ➠ old ': 'old ➠ new'}</button>*/}
                 </div>
-
-                {/*<div className={'flex gap'}>*/}
-                {/*    <Rating rating={rating}/>*/}
-                {/*    <b>{rating.toFixed(2)}</b>*/}
-                {/*</div>*/}
             </div>
 
 
@@ -67,7 +59,6 @@ const ReviewModal = ({recipe, setShowReview}) => {
                     <div className={'flex gap'} key={i}>
                         <div className={'rating-stars-sm'}>{'★★★★★'.slice(5-r.rating)}</div>
                         <p className={'text'} >{r.text} </p>
-                        {/*<div className={'rating'}>{r.rating} </div>*/}
 
                     </div>)
                 }

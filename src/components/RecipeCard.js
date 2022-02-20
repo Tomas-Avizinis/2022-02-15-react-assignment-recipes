@@ -8,7 +8,7 @@ import Rating from "./Rating";
 const RecipeCard = ({recipeId}) => {
 
     const nav=useNavigate();
-    const { favourites, favouriteOnOff, setCurrentId}=useContext(MainContext);
+    const { favourites, favouriteOnOff, setCurrentId, setLocation}=useContext(MainContext);
 
     const recipes=useSelector((state)=> state.recipes.value);
     const recipe=recipes.find(r=>r.id===recipeId);
@@ -17,10 +17,12 @@ const RecipeCard = ({recipeId}) => {
         const recipeLink=recipe.title.replaceAll(' ', '_').toLowerCase();
         setCurrentId(recipe.id);
         nav(`/recipe/${recipeLink}`);
+        setLocation('singleRecipe');
+        setCurrentId(recipeId);
     }
 
 
-    const rating= recipe.reviews.length ? (recipe.reviews.reduce((sum, r)=>sum + r.rating, 0)/recipe.reviews.length).toFixed(2) : 'Not rated';
+    const rating= recipe.reviews.length ? (recipe.reviews.reduce((sum, r)=>sum + r.rating, 0)/recipe.reviews.length).toFixed(2) : 'Not rated yet';
 
     return (
         <div className={'recipe-card-sm'} >
@@ -30,18 +32,20 @@ const RecipeCard = ({recipeId}) => {
 
 
             <div className={'recipe-info'}>
-                <div className={'flex space-btw w100 shade'} >
+                <div className={'flex space-btw w100'} >
+
                     <div className={'favourite'}
                          style={{color: favourites.includes(recipe.id)? 'red': 'lightgray'}}
                          onClick={()=>favouriteOnOff(recipe.id)}
-                         title='Add to favourites'> ❤
+                         title={favourites.includes(recipe.id)? 'Remove from favourites' : 'Add to favourites'}> ❤
                     </div>
-                    {rating!=='Not rated' && <Rating rating={rating}/>}
+
+                    {rating!=='Not rated yet' && <Rating rating={rating}/>}
                     <div>{rating}</div>
 
                 </div>
 
-                <div className={'flex space-btw w100'} >
+                <div className={'flex space-btw w100 shade'} >
                     <div>Ingredients: {recipe.ingredients.length}</div>
                     <div>Time: <b>{recipe.prepTime} min.</b></div>
                 </div>

@@ -11,7 +11,7 @@ const Favourites = () => {
 
 
     return (
-        <div className={'favourites flex wrap'}>
+        <div className={'favourites flex wrap left'}>
             {favRecipes.map((r,i)=><RecipeCard recipeId={r.id} key={i}/>)}
 
         </div>

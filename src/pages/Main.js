@@ -39,7 +39,3 @@ const Main = () => {
 
 export default Main;
 
-
-
-// const filter1=(ingredients)=> setFilteredRecipes(filteredRecipes.filter(r => r.ingredients.includes(ingredients)));
-// const filter2=(ingredNumber)=>setFilteredRecipes(filteredRecipes.filter(r => r.ingredients.length==ingredNumber));

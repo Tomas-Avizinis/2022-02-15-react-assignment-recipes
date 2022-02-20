@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
+import Footer from "./Footer";
 
 const Filters = ({filterRecipes, noFilter}) => {
 
@@ -57,10 +58,10 @@ const Filters = ({filterRecipes, noFilter}) => {
                 </div>
                 <div style={{opacity: ratingOn? '1':'.1'}}>Rating: {Number(range)}-{Number(range)+1}</div>
 
-                <button onClick={handleFilters}>Filter</button>
+                <button onClick={handleFilters} style={{width: '100%'}}>Filter</button>
                 <button onClick={clearInputs}>Clear filters</button>
             </div>
-
+            <Footer />
         </div>
     );
 };

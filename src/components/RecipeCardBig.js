@@ -14,9 +14,8 @@ const RecipeCardBig = ({recipeId}) => {
     const {favourites, favouriteOnOff}=useContext(MainContext);
     const [showReview, setShowReview]=useState(false);
 
-    console.log(recipe);
 
-    const rating= recipe.reviews.length ? (recipe.reviews.reduce((sum, r)=>sum + r.rating, 0)/recipe.reviews.length).toFixed(2) : 'Not rated';
+    const rating= recipe.reviews.length ? (recipe.reviews.reduce((sum, r)=>sum + r.rating, 0)/recipe.reviews.length).toFixed(2) : 'Not rated yet';
 
     return (
         <div className={'recipe-card-big'}>
@@ -34,16 +33,16 @@ const RecipeCardBig = ({recipeId}) => {
                         <span className={'favourite'}
                               style={{color: favourites.includes(recipe.id)? 'red': 'lightgray'}}
                               onClick={()=>favouriteOnOff(recipe.id)}
-                              title='Add to favourites'
-                        >❤</span>
+                              title={favourites.includes(recipe.id)? 'Remove from favourites' : 'Add to favourites'}>❤
+                        </span>
                         <div className={'flex gap'}>
-                            {rating!=='Not rated' && <Rating rating={rating}/>}
+                            {rating!=='Not rated yet' && <Rating rating={rating}/>}
                             <b>{rating}</b>
                         </div>
                     </div>
-                    <div className={'flex space-btw time'}>
-                        <div/>
-                        <p >Prep. time: <b>{recipe.prepTime}</b></p>
+                    <div className={'flex-col left time'}>
+                        <p >Preparation time: <b>{recipe.prepTime} min.</b></p>
+
                     </div>
 
                 </div>
@@ -59,7 +58,14 @@ const RecipeCardBig = ({recipeId}) => {
                     {recipe.steps.map((step, i)=><p key={i}>{i+1}. {step}</p>)}
                 </div>
 
-                <button onClick={()=>setShowReview(!showReview)}>{ showReview? 'Hide' :'Show'} reviews ({recipe.reviews.length})</button>
+                <button onClick={
+                    ()=>setShowReview(!showReview)}>{
+                    recipe.reviews.length?
+                        showReview?
+                            `Hide reviews (${recipe.reviews.length})`
+                            : `Show reviews (${recipe.reviews.length})`
+                        : 'Write first review'
+                }</button>
             </div>
 
 

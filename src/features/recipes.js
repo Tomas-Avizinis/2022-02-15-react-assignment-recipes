@@ -5,7 +5,7 @@ export const recipesSlice=createSlice( {
     initialState: {
         value: [
             {
-                "title": 'Šaunioji nuostabioji Itališka pica, su viduržemio reione užaugintomis alyvuogėmis',
+                "title": 'Šaunioji nuostabioji Itališka pica, su viduržemio regione užaugintomis alyvuogėmis',
                 "id":1,
                 "pictures": [
                     'https://c4.wallpaperflare.com/wallpaper/234/543/684/food-pizza-wallpaper-preview.jpg',
@@ -14,9 +14,9 @@ export const recipesSlice=createSlice( {
                     'https://c4.wallpaperflare.com/wallpaper/554/968/10/cheese-food-piece-wallpaper-thumb.jpg',
                     'https://c4.wallpaperflare.com/wallpaper/960/148/933/cheese-sliced-food-wallpaper-preview.jpg'
                 ],
-                "ingredients": ['padas', 'desra', 'suris'],
+                "ingredients": ['Padas', 'dešra', 'sūris', 'alyvuogės'],
                 "prepTime": 15,
-                "steps": ['ikaitinti orkaite', 'ir kepti nurodyta laika'],
+                "steps": ['Įkaitinti orkaitę', 'ir kepti nurodytą laiką'],
                 "reviews":[
                     {
                         'rating':5,
@@ -24,7 +24,7 @@ export const recipesSlice=createSlice( {
                     },
                     {
                         'rating':4,
-                        'text': 'sssss'
+                        'text': 'Man taip pat'
                     },
                 ]
             },
@@ -241,7 +241,6 @@ export const recipesSlice=createSlice( {
             const updateRecipe = {...a, reviews:[...a.reviews, {rating:rating, text: text}]}
             const updateRecipesArray=[...current(state).value];
             updateRecipesArray[index]=updateRecipe;
-            console.log(updateRecipe);
 
             state.value=[...updateRecipesArray]
         }

@@ -101,8 +101,9 @@ h3, p {
   justify-content: flex-start;
 }
 
+
 .my-footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
@@ -125,9 +126,7 @@ h3, p {
   height: 330px;
   margin: 10px;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
-  /*border: 1px solid black;*/
   border-radius: 10px;
-  /*overflow:hidden;*/
 
 }
 .recipe-card-sm .image {
@@ -213,13 +212,20 @@ button.addRemove {
   border: 2px outset;
 }
 
-input, fieldset {
+input {
+  margin: 2px;
+  padding: 8px;
+  border: 1px inset;
+  background-color: azure;
+  border-radius: 5px;
+  height: 20px;
+}
+
+fieldset {
   margin: 0;
   border: 1px inset;
   background-color: transparent;
   border-radius: 5px;
-}
-fieldset {
   padding: 15px;
 }
 
@@ -300,7 +306,9 @@ input.range {
 }
 .time {
   background-color: #dddddd;
-  padding: 0 5px;
+  padding: 5px;
+  margin-top: 15px;
+  font-size: .9em;
 }
 .review-modal {
   position: absolute;
