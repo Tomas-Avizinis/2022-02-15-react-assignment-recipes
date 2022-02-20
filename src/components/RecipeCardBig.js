@@ -41,7 +41,7 @@ const RecipeCardBig = ({recipeId}) => {
                         </div>
                     </div>
                     <div className={'flex-col left time'}>
-                        <p >Preparation time: <b>{recipe.prepTime} min.</b></p>
+                        <p >Preparation: <b>{recipe.prepTime} min.</b></p>
 
                     </div>
 

@@ -40,7 +40,6 @@ export const recipesSlice=createSlice( {
                     'https://c4.wallpaperflare.com/wallpaper/667/630/482/burger-dinner-food-hamburger-wallpaper-preview.jpg',
                     'https://c4.wallpaperflare.com/wallpaper/330/471/709/food-burgers-wallpaper-preview.jpg',
                     'https://c4.wallpaperflare.com/wallpaper/777/533/143/movies-pulp-fiction-samuel-l-jackson-burgers-wallpaper-preview.jpg',
-                    '',
                 ],
                 "ingredients": ['bandele', 'kotletas', 'suris', 'salota'],
                 "prepTime": 5,
