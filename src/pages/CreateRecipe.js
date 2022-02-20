@@ -17,6 +17,7 @@ const CreateRecipe = () => {
     const [picArray, setPicArray]=useState(['','']);
     const [ingredArray, setIngredArray]=useState(['','']);
     const [stepsArray, setStepsArray]=useState(['']);
+    const [errorMessage, setErrorMessage]=useState(false);
 
     const {setLocation}=useContext(MainContext);
 
@@ -30,6 +31,7 @@ const CreateRecipe = () => {
             prepTimeRef.current.value &&
             stepsArray.every(step=>step)) {
 
+            setErrorMessage(false);
             dispatch(addRecipe({
                 title: titleRef.current.value,
                 id:currentId,
@@ -42,7 +44,8 @@ const CreateRecipe = () => {
             }));
             nav('/');
             setLocation('main');
-        }
+
+        } else setErrorMessage(true);
     }
 
     const picArrayChange=(i,e)=>{
@@ -117,7 +120,11 @@ const CreateRecipe = () => {
                     )}
                 </fieldset>
 
-                <input type="number" ref={prepTimeRef} placeholder={'preparation time'}/>
+                <div className={'flex gap'}>
+                    <input type="number" ref={prepTimeRef} placeholder={'preparation time'}/>
+                    <p>min.</p>
+                </div>
+
 
                 <fieldset className={'flex-col left'}>
                     <legend>Preparation</legend>
@@ -130,7 +137,13 @@ const CreateRecipe = () => {
                     )}
                 </fieldset>
 
-                <button onClick={submitRecipe} style={{width: '100%', margin:'20px 0 50px 0'}}>Create</button>
+                <button onClick={submitRecipe} style={{width: '100%', margin:'20px 0'}}>Create</button>
+                {errorMessage &&
+                    <div style={{width:'250px', color: 'red'}}>
+                        <p>Please fill all input fields!</p>
+                        <p>Pictures should start with "http".</p>
+                    </div>
+                }
             </div>
         </div>
     );
